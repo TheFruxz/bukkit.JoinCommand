@@ -1,0 +1,13 @@
+name: JoinCommand
+version: 1.0
+main: de.fruxz.joincommand.main.Main
+authors: [Fruxz]
+description: JoinCommand is a plugin based on the Idea from this thread https://forum.neruxvace.net/threads/joincommand.36979/
+website: https://github.com/TheFruxz
+commands:
+  joincommand:
+    description: Command to manage join-commands
+    usage: /<command> <add|remove|addfirst|removefirst|list|info|togglebypassable> (<command>)
+    aliases:
+      - jc
+      - jcommand
