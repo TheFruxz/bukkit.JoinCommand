@@ -6,13 +6,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class ConnectionListener implements Listener {
+public class ConnectionHandler implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        if (!player.hasPermission("joincommand.bypass")) {
+        if (!player.hasPermission(Space.permission_bypass)) {
             for (String command : Space.list_joinCommands.getCurrentValue()) {
                 player.performCommand(command);
             }
