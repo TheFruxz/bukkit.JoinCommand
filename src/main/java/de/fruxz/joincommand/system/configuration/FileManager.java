@@ -2,6 +2,13 @@ package de.fruxz.joincommand.system.configuration;
 
 import java.util.List;
 
+/**
+ * This interface allows you to easily manage files
+ *
+ * @author Fruxz
+ * @version 1.0
+ */
+
 public interface FileManager {
 
     void load();

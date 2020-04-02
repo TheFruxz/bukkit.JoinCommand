@@ -14,6 +14,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+/**
+ * This command is the JoinCommand and helps to register the command and the tabcompleter
+ *
+ * @author Fruxz
+ * @version 1.0
+ */
 public class JoinCommand implements CommandExecutor {
 
     private Transmission syntax(Command command) {

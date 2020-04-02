@@ -6,6 +6,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+/**
+ * This class helps to manage connections of the server
+ *
+ * @author Fruxz
+ * @version 1.0
+ */
 public class ConnectionHandler implements Listener {
 
     @EventHandler

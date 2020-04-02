@@ -8,16 +8,31 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * This class makes it possible to target configuration files and manage their contents in a simple and structured way
+ *
+ * @author Fruxz
+ * @version 1.0
+ */
+
 public class ConfigurationFile implements FileManager {
 
     private final File file;
     private final YamlConfiguration loader;
+
+    /**
+     * Defines the configuration file and parameters
+     * @param path defines the file name and the file extension
+     */
 
     public ConfigurationFile(String path) {
         this.file = new File("plugins/JoinCommand", path);
         this.loader = YamlConfiguration.loadConfiguration(file);
     }
 
+    /**
+     * Loads the file
+     */
     @Override
     public void load() {
         try {
@@ -32,6 +47,9 @@ public class ConfigurationFile implements FileManager {
         }
     }
 
+    /**
+     * Saves the file
+     */
     @Override
     public void save() {
         try {
@@ -41,6 +59,11 @@ public class ConfigurationFile implements FileManager {
         }
     }
 
+    /**
+     * Sets or changes an existing value
+     * @param path defines the location of the value
+     * @param v defines the new value
+     */
     @Override
     public void set(String path, Object v) {
         load();
@@ -48,58 +71,106 @@ public class ConfigurationFile implements FileManager {
         save();
     }
 
+    /**
+     * Gets a value from the file
+     * @param path defines the location of the value
+     * @return the value of the path
+     */
     @Override
     public Object get(String path) {
         load();
         return loader.get(path);
     }
 
+    /**
+     * Gets a text from the file
+     * @param path defines the location of the value
+     * @return the value of the path
+     */
     @Override
     public String getString(String path) {
         load();
         return loader.getString(path);
     }
 
+    /**
+     * Gets a number from the file
+     * @param path defines the location of the value
+     * @return the value of the path
+     */
     @Override
     public Integer getInt(String path) {
         load();
         return loader.getInt(path);
     }
 
+    /**
+     * Gets a yes/no from the file
+     * @param path defines the location of the value
+     * @return the value of the path
+     */
     @Override
     public Boolean getBoolean(String path) {
         load();
         return loader.getBoolean(path);
     }
 
+    /**
+     * Gets a list from the file
+     * @param path defines the location of the value
+     * @return the value of the path
+     */
     @Override
     public List<?> getList(String path) {
         load();
         return loader.getList(path);
     }
 
+    /**
+     * Gets a text list from the file
+     * @param path defines the location of the value
+     * @return the value of the path
+     */
     @Override
     public List<String> getStringList(String path) {
         load();
         return loader.getStringList(path);
     }
 
+    /**
+     * Gets a number list from the file
+     * @param path defines the location of the value
+     * @return the value of the path
+     */
     @Override
     public List<Integer> getIntList(String path) {
         load();
         return loader.getIntegerList(path);
     }
 
+    /**
+     * Gets a yes/no list from the file
+     * @param path defines the location of the value
+     * @return the value of the path
+     */
     @Override
     public List<Boolean> getBooleanList(String path) {
         load();
         return loader.getBooleanList(path);
     }
 
+    /**
+     * Gets the loader from the file
+     * @return the loader
+     */
     public YamlConfiguration getLoader() {
         return loader;
     }
 
+    /**
+     * Gets the file
+     * @return the file
+     */
     public File getFile() {
         return file;
     }

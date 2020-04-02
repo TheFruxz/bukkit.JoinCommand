@@ -7,6 +7,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * This class is the startup registration class, it helps to add commands and event handlers
+ *
+ * @author Fruxz
+ * @version 1.0
+ */
 public final class Main extends JavaPlugin {
 
     @Override
@@ -22,8 +28,4 @@ public final class Main extends JavaPlugin {
 
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
 }
