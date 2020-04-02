@@ -13,4 +13,6 @@ public class Space {
     public static Preference<List<String>> list_joinCommands = new Preference<>("system.joinCommands", Collections.emptyList());
     public static Preference<List<String>> list_firstJoinCommands = new Preference<>("system.fistJoinCommands", Collections.emptyList());
 
+    public static Preference<Boolean> system_isBypassAble = new Preference<>("system.isBypassAble", false);
+
 }

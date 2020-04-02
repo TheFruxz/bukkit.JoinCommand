@@ -12,7 +12,7 @@ public class ConnectionHandler implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        if (!player.hasPermission(Space.permission_bypass)) {
+        if (!player.hasPermission(Space.permission_bypass) || !Space.system_isBypassAble.getCurrentValue()) {
             for (String command : Space.list_joinCommands.getCurrentValue()) {
                 player.performCommand(command);
             }
